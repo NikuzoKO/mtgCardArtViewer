@@ -70,11 +70,7 @@ function App() {
                     cards.map((card) =>
                         card.image_uris ? (
                             <img
-                                src={
-                                    art === "large"
-                                        ? card.image_uris.large
-                                        : card.image_uris.art_crop
-                                }
+                                src={card.image_uris.large}
                                 alt={card.name}
                                 onClick={(e) => handleOnClick(e, card)}
                                 key={card.id}
@@ -82,11 +78,7 @@ function App() {
                         ) : (
                             card.card_faces.map((face, index) => (
                                 <img
-                                    src={
-                                        art === "large"
-                                            ? face.image_uris.large
-                                            : face.image_uris.art_crop
-                                    }
+                                    src={face.image_uris.large}
                                     onClick={(e) => handleOnClick(e, card)}
                                     key={card.id + index}
                                 />
